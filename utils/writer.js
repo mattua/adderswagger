@@ -65,7 +65,7 @@ var writeJson = exports.writeJson = function(response, arg1, arg2) {
 
   console.log("hmmmmmmmm")
   console.log("payload is " + payload + " code is " + code)
-  response.writeHead(code, {'Content-Type': 'application/json'});
+  response.writeHead(code, {'Content-Type': 'application/json','Access-Control-Allow-Origin':'*'});
   console.log("bummmmmmmmm")
   response.end(payload);
   console.log("mehhhhhhhhhhhh")
