@@ -11,7 +11,10 @@
 exports.addNum1Num2GET = function(num1,num2) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = num1 + num2;
+    examples['application/json'] = 
+    {
+      result:num1 + num2
+    }
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
@@ -20,3 +23,14 @@ exports.addNum1Num2GET = function(num1,num2) {
   });
 }
 
+exports.addJsonNum1Num2GET = function(num1,num2) {
+  return new Promise(function(resolve, reject) {
+    var examples = {};
+    examples['application/json'] = num1 + num2;
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
+    } else {
+      resolve();
+    }
+  });
+}

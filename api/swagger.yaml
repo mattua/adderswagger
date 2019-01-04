@@ -1,31 +1,39 @@
----
 swagger: "2.0"
-#add default host - this enables you to test the service direct from swagger editor
-#don't forget to add the directive for CORS in the response header to make this work
 host: 192.168.0.48:8080
 info:
   version: "1.0"
   title: "Hello Adder API"
+  
+  
 paths:
+  
   /add/{num1}/{num2}:
     get:
-      description: "Adds numbers!"
-      operationId: "addNum1Num2GET"
+      description: Adds numbers!
       parameters:
-      - name: "num1"
-        in: "path"
-        description: "num1."
-        required: true
-        type: "integer"
-      - name: "num2"
-        in: "path"
-        description: "num2."
-        required: true
-        type: "integer"
+        - name: num1
+          in: path
+          type: integer
+          required: true
+          description: num1.
+        - name: num2
+          in: path
+          type: integer
+          required: true
+          description: num2.
       responses:
-        200:
-          description: "Returns the sum."
+        '200':
+          description: A User object
           schema:
-            type: "integer"
-      x-swagger-router-controller: "Default"
-definitions: {}
+            $ref: '#/definitions/addresult'
+                
+                
+definitions:
+  addresult:
+    type: object
+    properties:
+      result:
+        type: integer
+        description: The result.
+      
+        
