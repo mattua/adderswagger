@@ -1,0 +1,28 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "Hello Adder API"
+paths:
+  /add/{num1}/{num2}:
+    get:
+      description: "Adds numbers!"
+      operationId: "addNum1Num2GET"
+      parameters:
+      - name: "num1"
+        in: "path"
+        description: "num1."
+        required: true
+        type: "integer"
+      - name: "num2"
+        in: "path"
+        description: "num2."
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "Returns the sum."
+          schema:
+            type: "integer"
+      x-swagger-router-controller: "Default"
+definitions: {}
