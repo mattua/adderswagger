@@ -6,7 +6,7 @@ schemes:
   - http
 info:
   version: "1.0"
-  title: "Hello Adder API"
+  title: "Nadisha's Maths API"
 paths:
   /add/{num1}/{num2}:
     get:
@@ -29,7 +29,27 @@ paths:
           schema:
             $ref: '#/definitions/addresult'
       x-swagger-router-controller: "Default"
-
+  /multiply/{num1}/{num2}:
+    get:
+      description: "Multiplies numbers!"
+      operationId: "multiplyNum1Num2GET"
+      parameters:
+      - name: "num1"
+        in: "path"
+        description: "num1."
+        required: true
+        type: "integer"
+      - name: "num2"
+        in: "path"
+        description: "num2."
+        required: true
+        type: "integer"
+      responses:
+        '200':
+          description: A User object
+          schema:
+            $ref: '#/definitions/addresult'
+      x-swagger-router-controller: "Default"
 definitions:
   addresult:
     type: object
