@@ -2,7 +2,8 @@
 swagger: "2.0"
 #add default host - this enables you to test the service direct from swagger editor
 #don't forget to add the directive for CORS in the response header to make this
-host: 192.168.0.48:8080
+schemes:
+  - http
 info:
   version: "1.0"
   title: "Hello Adder API"
